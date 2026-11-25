@@ -1,0 +1,156 @@
+{
+  "hero-munnar": {
+    "path": "/images/hero-munnar.jpg",
+    "sourceTitle": "File:Kolukkumalai sunrise view.jpg",
+    "width": 1280,
+    "height": 960,
+    "bytes": 31964
+  },
+  "hero-mobile": {
+    "path": "/images/hero-mobile.jpg",
+    "sourceTitle": "File:Sunrise over the peak at Kolukkumalai, Kerala.jpg",
+    "width": 4000,
+    "height": 3000,
+    "bytes": 418505
+  },
+  "resort-exterior": {
+    "path": "/images/resort-exterior.jpg",
+    "sourceTitle": "File:Way 2 Suryanelli ,Munnar - panoramio.jpg",
+    "width": 1280,
+    "height": 960,
+    "bytes": 352632
+  },
+  "resort-surroundings": {
+    "path": "/images/resort-surroundings.jpg",
+    "sourceTitle": "File:Suryanelli Tea Forest.jpeg",
+    "width": 1600,
+    "height": 1200,
+    "bytes": 300006
+  },
+  "villa-exterior": {
+    "path": "/images/villa-exterior.jpg",
+    "sourceTitle": "File:Devikulam Hills - panoramio.jpg",
+    "width": 1501,
+    "height": 846,
+    "bytes": 886417
+  },
+  "villa-interior": {
+    "path": "/images/villa-interior.jpg",
+    "sourceTitle": "File:Munnar valley with love.jpg",
+    "width": 3840,
+    "height": 2160,
+    "bytes": 731369
+  },
+  "villa-balcony": {
+    "path": "/images/villa-balcony.jpg",
+    "sourceTitle": "File:Misty hills and valley reservoir at sunrise from Kolukkumalai, Kerala.jpg",
+    "width": 4000,
+    "height": 3000,
+    "bytes": 549380
+  },
+  "outdoor-seating": {
+    "path": "/images/outdoor-seating.jpg",
+    "sourceTitle": "File:Munnar tea gardens.jpg",
+    "width": 13154,
+    "height": 1663,
+    "bytes": 181186
+  },
+  "dining-kerala": {
+    "path": "/images/dining-kerala.jpg",
+    "sourceTitle": "File:Appam and Egg curry.jpg",
+    "width": 2048,
+    "height": 1536,
+    "bytes": 488576
+  },
+  "activity-jeep": {
+    "path": "/images/activity-jeep.jpg",
+    "sourceTitle": "File:View of some hills from Kolukkumalai.jpg",
+    "width": 3000,
+    "height": 3000,
+    "bytes": 754315
+  },
+  "activity-trekking": {
+    "path": "/images/activity-trekking.jpg",
+    "sourceTitle": "File:Meesapulimala.jpg",
+    "width": 5152,
+    "height": 3864,
+    "bytes": 607533
+  },
+  "activity-boating": {
+    "path": "/images/activity-boating.jpg",
+    "sourceTitle": "File:Mattupetty Lake View.jpg",
+    "width": 6996,
+    "height": 2516,
+    "bytes": 550779
+  },
+  "activity-cycling": {
+    "path": "/images/activity-cycling.jpg",
+    "sourceTitle": "File:Tea Estate (4218336272).jpg",
+    "width": 4288,
+    "height": 2848,
+    "bytes": 809871
+  },
+  "sight-kolukkumalai": {
+    "path": "/images/sight-kolukkumalai.jpg",
+    "sourceTitle": "File:The Stary Sunrise View from Kolukkumalai, Munnar.jpg",
+    "width": 5629,
+    "height": 3753,
+    "bytes": 244782
+  },
+  "sight-anayirankal": {
+    "path": "/images/sight-anayirankal.jpg",
+    "sourceTitle": "File:Anayirankal-1.jpg",
+    "width": 1024,
+    "height": 683,
+    "bytes": 229515
+  },
+  "sight-mattupetty": {
+    "path": "/images/sight-mattupetty.jpg",
+    "sourceTitle": "File:Mattupetty Dam - \u0d2e\u0d3e\u0d1f\u0d4d\u0d1f\u0d41\u0d2a\u0d4d\u0d2a\u0d46\u0d1f\u0d4d\u0d1f\u0d3f \u0d05\u0d23\u0d15\u0d4d\u0d15\u0d46\u0d1f\u0d4d\u0d1f\u0d4d -6.jpg",
+    "width": 3648,
+    "height": 2736,
+    "bytes": 359336
+  },
+  "sight-kundala": {
+    "path": "/images/sight-kundala.jpg",
+    "sourceTitle": "File:Kundala Lake (23989612990).jpg",
+    "width": 1920,
+    "height": 1080,
+    "bytes": 140355
+  },
+  "sight-meesapulimala": {
+    "path": "/images/sight-meesapulimala.jpg",
+    "sourceTitle": "File:MEESAPULIMALA IDUKKI.jpg",
+    "width": 5184,
+    "height": 3456,
+    "bytes": 998160
+  },
+  "sight-marayoor": {
+    "path": "/images/sight-marayoor.jpg",
+    "sourceTitle": "File:Marayoor ksrtmun2k24 (8).jpg",
+    "width": 4032,
+    "height": 2268,
+    "bytes": 595554
+  },
+  "sight-chinnar": {
+    "path": "/images/sight-chinnar.jpg",
+    "sourceTitle": "File:Elephant in Chinnar Wildlife Reserve.jpg",
+    "width": 4608,
+    "height": 3456,
+    "bytes": 1271161
+  },
+  "cta-mountains": {
+    "path": "/images/cta-mountains.jpg",
+    "sourceTitle": "File:Sunset in Munnar tea garden.jpg",
+    "width": 5184,
+    "height": 3456,
+    "bytes": 119283
+  },
+  "sight-chokramudi": {
+    "path": "/images/sight-chokramudi.jpg",
+    "sourceTitle": "File:Chokramudi base point.jpg",
+    "width": 6144,
+    "height": 8160,
+    "bytes": 1342887
+  }
+}
