@@ -2,13 +2,14 @@ import React from "react";
 import Image from "next/image";
 import { RESORT_IMAGES } from "@/config/images";
 import { DREAM_PROJECT_INFO, SITE_INFO } from "@/config/siteData";
+import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
 import {
   MapPinIcon,
   LeafIcon,
   MountainIcon,
   HomeWoodIcon,
-  CompassIcon,
+  CheckCircleIcon,
   WhatsAppIcon,
   PhoneIcon,
   ArrowUpRightIcon,
@@ -19,244 +20,282 @@ export default function DreamProjectSection() {
     SITE_INFO.contact.whatsappNumber
   }?text=${encodeURIComponent(DREAM_PROJECT_INFO.enquiryText)}`;
 
-  const highlightIcons = [
-    <MountainIcon key="m" size={22} />,
-    <LeafIcon key="l" size={22} />,
-    <CompassIcon key="c" size={22} />,
-    <HomeWoodIcon key="h" size={22} />,
-  ];
-
   return (
     <section
       id="dream-project"
-      className="py-20 sm:py-28 bg-[#344B39] text-white relative overflow-hidden"
+      className="py-16 sm:py-24 lg:py-28 bg-gradient-to-b from-white via-[#F5F2E9]/70 to-[#F5F2E9] text-[#282B26] border-t border-[#344B39]/10 overflow-hidden"
     >
-      {/* Subtle luxury radial glow accent */}
-      <div
-        className="pointer-events-none absolute -top-40 -right-40 h-96 w-96 rounded-full bg-[#C8A982]/12 blur-3xl"
-        aria-hidden="true"
-      />
-      <div
-        className="pointer-events-none absolute -bottom-40 -left-40 h-96 w-96 rounded-full bg-[#D9E1D3]/10 blur-3xl"
-        aria-hidden="true"
-      />
-
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Top Header Row */}
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* Section Heading */}
         <Reveal>
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-10 border-b border-white/15">
-            <div className="max-w-3xl space-y-3 text-center lg:text-left mx-auto lg:mx-0">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-[#C8A982] text-xs font-bold uppercase tracking-[0.2em]">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#C8A982]" />
-                <span>{DREAM_PROJECT_INFO.eyebrow}</span>
-              </div>
-
-              <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold text-white leading-[1.12] tracking-tight">
-                {DREAM_PROJECT_INFO.title}
-              </h2>
-
-              <div className="inline-flex flex-wrap items-center justify-center lg:justify-start gap-2 text-xs sm:text-sm text-[#D9E1D3] font-medium pt-1">
-                <MapPinIcon size={16} className="text-[#C8A982] shrink-0" />
-                <span>{DREAM_PROJECT_INFO.subtitle}</span>
-              </div>
-            </div>
-
-            {/* Key Project Metrics Pills */}
-            <div className="grid grid-cols-3 gap-2.5 sm:gap-4 w-full lg:w-auto">
-              {DREAM_PROJECT_INFO.stats.map((stat) => (
-                <div
-                  key={stat.value}
-                  className="rounded-[16px] bg-white/10 backdrop-blur-xs border border-white/15 px-3.5 py-3 sm:px-5 sm:py-4 text-center lg:text-left"
-                >
-                  <p className="text-base sm:text-xl font-extrabold text-[#F5F2E9]">
-                    {stat.value}
-                  </p>
-                  <p className="text-[11px] sm:text-xs text-[#D9E1D3]/85 mt-0.5 leading-snug">
-                    {stat.label}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
+          <SectionHeading
+            eyebrow={DREAM_PROJECT_INFO.eyebrow}
+            title="Swargam Medu Sandalwood Villa Sanctuary."
+            description="Our flagship dream villa project at Swargam Medu (Mangathotty, Audathi / Ottathi)—where bespoke hillside eco-villas meet 3 acres of newly planted sandalwood right beside Idukki's iconic 'Hill of Heaven' viewpoint."
+          />
         </Reveal>
 
-        {/* Main Two-Column Luxury Editorial Layout */}
-        <div className="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
-          {/* Left Column: Visual Showcase of Swargam Medu & 3-Acre Sandalwood Estate (7 cols) */}
-          <div className="lg:col-span-7 space-y-5">
-            {/* Large Primary Feature Card: Swargam Medu Viewpoint */}
-            <Reveal direction="scale">
-              <div className="group relative aspect-[16/10] w-full rounded-[22px] overflow-hidden border border-white/20 shadow-[0_24px_60px_rgba(0,0,0,0.32)] bg-[#282B26]">
-                <Image
-                  src={RESORT_IMAGES.swargamViewpoint.src}
-                  alt={RESORT_IMAGES.swargamViewpoint.alt}
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 58vw"
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+        {/* Main Centerpiece Showcase Card — Normal-Flow Responsive Layout (Zero Text Overlap) */}
+        <Reveal delay={100}>
+          <div className="mt-10 sm:mt-12 rounded-[20px] sm:rounded-[24px] bg-white border border-[#344B39]/14 shadow-[0_20px_55px_rgba(52,75,57,0.09)] overflow-hidden grid grid-cols-1 lg:grid-cols-12">
+            {/* Left 7 Columns: Clean Unobstructed Hillside Eco-Pods Villa Photograph */}
+            <div className="lg:col-span-7 relative aspect-[16/10] sm:aspect-[16/9] lg:aspect-auto lg:min-h-[460px] w-full overflow-hidden bg-[#D9E1D3] group">
+              <Image
+                src={RESORT_IMAGES.swargamViewpoint.src}
+                alt="Signature hillside eco-pod villas stepping down the green mountain ridge at Swargam Medu, Mangathotty"
+                fill
+                unoptimized
+                sizes="(max-width: 1024px) 100vw, 60vw"
+                className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
 
-                <div className="absolute top-4 left-4 right-4 flex items-center justify-between gap-2">
-                  <span className="px-3.5 py-1.5 rounded-full bg-[#F5F2E9] text-[#344B39] text-xs font-bold tracking-wide shadow-sm">
-                    Swargam Medu Viewpoint • &ldquo;Hill of Heaven&rdquo;
+              {/* Single Compact Pill Badge at Top-Left */}
+              <div className="absolute top-3.5 left-3.5 sm:top-4 sm:left-4">
+                <span className="inline-flex items-center px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-white/95 backdrop-blur-xs text-[#344B39] text-[11px] sm:text-xs font-bold tracking-wide shadow-sm">
+                  Swargam Medu • Hillside Eco-Villas
+                </span>
+              </div>
+            </div>
+
+            {/* Right 5 Columns: Normal-Flow Responsive Text, Stats & Enquiry Actions */}
+            <div className="lg:col-span-5 p-5 sm:p-7 lg:p-8 flex flex-col justify-between gap-6 bg-white">
+              <div className="space-y-4">
+                {/* Wrapping Location Tag */}
+                <div className="inline-flex items-start sm:items-center gap-2 px-3 py-1.5 rounded-[10px] bg-[#F5F2E9] border border-[#344B39]/12 text-[#344B39] text-xs font-semibold max-w-full">
+                  <MapPinIcon
+                    size={14}
+                    className="text-[#596B4D] shrink-0 mt-0.5 sm:mt-0"
+                  />
+                  <span className="leading-snug break-words">
+                    Swargam Medu, Mangathotty (Audathi), Idukki
                   </span>
+                </div>
+
+                <h3 className="text-xl sm:text-2xl lg:text-[1.6rem] font-extrabold text-[#344B39] leading-snug break-words">
+                  Where the &ldquo;Hill of Heaven&rdquo; Meets a 3-Acre
+                  Sandalwood Sanctuary.
+                </h3>
+
+                <p className="text-sm sm:text-base text-[#282B26]/85 leading-relaxed">
+                  Situated right beside the breathtaking{" "}
+                  <strong className="font-semibold text-[#344B39]">
+                    Swargam Medu Viewpoint
+                  </strong>{" "}
+                  in the peaceful highland hamlet of{" "}
+                  <strong className="font-semibold text-[#344B39]">
+                    Mangathotty, Audathi (Ottathi)
+                  </strong>
+                  , our dream villa project is designed as a rare nature
+                  sanctuary in Idukki.
+                </p>
+
+                <p className="text-xs sm:text-sm text-[#282B26]/75 leading-relaxed">
+                  Every hillside villa is harmonized around{" "}
+                  <strong className="font-semibold text-[#344B39]">
+                    3 acres of newly planted sandalwood
+                  </strong>
+                  —offering private viewing decks, cool mountain winds, and
+                  uninterrupted 360-degree sunrise and sunset horizons over the
+                  Western Ghats.
+                </p>
+
+                {/* Responsive Stat Pills — Stack cleanly on very narrow screens, 3 cols on sm+ */}
+                <div className="pt-1 grid grid-cols-1 min-[420px]:grid-cols-3 gap-2.5">
+                  <div className="rounded-[12px] bg-[#F5F2E9] px-3 py-2.5 border border-[#344B39]/10 text-left min-[420px]:text-center flex min-[420px]:flex-col items-center justify-between min-[420px]:justify-center gap-1">
+                    <p className="text-sm sm:text-base font-extrabold text-[#344B39]">
+                      3 Acres
+                    </p>
+                    <p className="text-[11px] font-medium text-[#596B4D] leading-tight">
+                      Sandalwood Grove
+                    </p>
+                  </div>
+                  <div className="rounded-[12px] bg-[#F5F2E9] px-3 py-2.5 border border-[#344B39]/10 text-left min-[420px]:text-center flex min-[420px]:flex-col items-center justify-between min-[420px]:justify-center gap-1">
+                    <p className="text-sm sm:text-base font-extrabold text-[#344B39]">
+                      360° View
+                    </p>
+                    <p className="text-[11px] font-medium text-[#596B4D] leading-tight">
+                      Swargam Medu
+                    </p>
+                  </div>
+                  <div className="rounded-[12px] bg-[#F5F2E9] px-3 py-2.5 border border-[#344B39]/10 text-left min-[420px]:text-center flex min-[420px]:flex-col items-center justify-between min-[420px]:justify-center gap-1">
+                    <p className="text-sm sm:text-base font-extrabold text-[#344B39]">
+                      Audathi
+                    </p>
+                    <p className="text-[11px] font-medium text-[#596B4D] leading-tight">
+                      Mangathotty Hills
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Direct Enquiry Footer inside Showcase Card */}
+              <div className="pt-4 border-t border-[#344B39]/10 flex flex-wrap items-center justify-between gap-3">
+                <div className="min-w-0 flex-1">
+                  <p className="text-xs font-bold uppercase tracking-wider text-[#596B4D]">
+                    Project Enquiries & Visits
+                  </p>
+                  <p className="text-xs text-[#282B26]/75 mt-0.5">
+                    Connect with our team for Swargam Medu villa details
+                  </p>
+                </div>
+                <div className="flex items-center gap-2 shrink-0">
                   <a
                     href={DREAM_PROJECT_INFO.mapsUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-black/50 hover:bg-black/75 text-white border border-white/25 text-xs font-semibold backdrop-blur-sm transition-colors"
+                    aria-label="Open Swargam Medu on Google Maps"
+                    title="Swargam Medu Map"
+                    className="inline-flex items-center gap-1.5 px-3.5 h-11 rounded-[12px] bg-[#F5F2E9] hover:bg-[#D9E1D3]/70 text-[#344B39] border border-[#344B39]/20 text-xs font-bold transition-all"
                   >
-                    <span>View Map</span>
-                    <ArrowUpRightIcon size={14} />
-                  </a>
-                </div>
-
-                <div className="absolute bottom-4 left-5 right-5 text-white">
-                  <h3 className="text-xl sm:text-2xl font-extrabold">
-                    Steps Away from Swargam Medu Viewpoint
-                  </h3>
-                  <p className="text-xs sm:text-sm text-[#F5F2E9]/90 mt-1">
-                    Panoramic 360° views of emerald ridges, drifting clouds, and
-                    the Western Ghats at Mangathotty, Audathi.
-                  </p>
-                </div>
-              </div>
-            </Reveal>
-
-            {/* Bottom Two Supporting Photographs: 3-Acre Sandalwood + Highland Villas Setting */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-              <Reveal delay={100}>
-                <div className="group relative aspect-[16/11] w-full rounded-[18px] overflow-hidden border border-white/15 shadow-lg bg-[#282B26]">
-                  <Image
-                    src={RESORT_IMAGES.swargamSandalwood.src}
-                    alt={RESORT_IMAGES.swargamSandalwood.alt}
-                    fill
-                    sizes="(max-width: 640px) 100vw, 30vw"
-                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                  <div className="absolute top-3 left-3">
-                    <span className="px-3 py-1 rounded-full bg-[#C8A982] text-[#282B26] text-[11px] font-bold">
-                      3-Acre Sandalwood Grove
-                    </span>
-                  </div>
-                  <div className="absolute bottom-3.5 left-4 right-4 text-white">
-                    <p className="text-sm sm:text-base font-bold">
-                      Newly Planted Sandalwood Estate
-                    </p>
-                    <p className="text-xs text-white/80 mt-0.5">
-                      Villas harmonized within 3 acres of young sandalwood trees
-                    </p>
-                  </div>
-                </div>
-              </Reveal>
-
-              <Reveal delay={180}>
-                <div className="group relative aspect-[16/11] w-full rounded-[18px] overflow-hidden border border-white/15 shadow-lg bg-[#282B26]">
-                  <Image
-                    src={RESORT_IMAGES.swargamHills.src}
-                    alt={RESORT_IMAGES.swargamHills.alt}
-                    fill
-                    sizes="(max-width: 640px) 100vw, 30vw"
-                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                  <div className="absolute top-3 left-3">
-                    <span className="px-3 py-1 rounded-full bg-white/90 text-[#344B39] text-[11px] font-bold">
-                      Mangathotty • Audathi
-                    </span>
-                  </div>
-                  <div className="absolute bottom-3.5 left-4 right-4 text-white">
-                    <p className="text-sm sm:text-base font-bold">
-                      High-Altitude Cloud & Sunset Ridge
-                    </p>
-                    <p className="text-xs text-white/80 mt-0.5">
-                      Senapathy Panchayat, Udumbanchola Taluk, Idukki
-                    </p>
-                  </div>
-                </div>
-              </Reveal>
-            </div>
-          </div>
-
-          {/* Right Column: Storytelling, 4 Feature Pillars & Direct Enquiry Actions (5 cols) */}
-          <div className="lg:col-span-5 space-y-6">
-            <Reveal delay={80}>
-              <div className="rounded-[20px] bg-white/8 backdrop-blur-sm border border-white/15 p-6 sm:p-7 space-y-4">
-                <p className="text-base sm:text-lg font-semibold text-[#F5F2E9] leading-relaxed">
-                  {DREAM_PROJECT_INFO.leadStory}
-                </p>
-                <p className="text-sm text-[#D9E1D3]/90 leading-relaxed">
-                  {DREAM_PROJECT_INFO.secondaryStory}
-                </p>
-              </div>
-            </Reveal>
-
-            {/* 4 Key Attraction Cards */}
-            <div className="space-y-3.5">
-              {DREAM_PROJECT_INFO.highlights.map((item, idx) => (
-                <Reveal key={item.title} delay={120 + idx * 70}>
-                  <div className="rounded-[16px] bg-[#F5F2E9] text-[#282B26] p-4 sm:p-5 border border-white/20 shadow-sm flex items-start gap-4 transition-transform duration-300 hover:-translate-y-0.5">
-                    <div className="h-11 w-11 rounded-[12px] bg-[#344B39] text-[#F5F2E9] flex items-center justify-center shrink-0 mt-0.5">
-                      {highlightIcons[idx]}
-                    </div>
-                    <div className="space-y-1">
-                      <h3 className="text-base font-bold text-[#344B39]">
-                        {item.title}
-                      </h3>
-                      <p className="text-xs sm:text-sm text-[#282B26]/80 leading-relaxed">
-                        {item.description}
-                      </p>
-                    </div>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-
-            {/* Bottom Action Bar: Location Map + WhatsApp & Phone Icons */}
-            <Reveal delay={350}>
-              <div className="rounded-[18px] bg-white/10 border border-white/20 p-5 flex flex-wrap items-center justify-between gap-4">
-                <div>
-                  <p className="text-sm font-bold text-white">
-                    Enquire About Our Swargam Medu Villas
-                  </p>
-                  <p className="text-xs text-[#D9E1D3]/85 mt-0.5">
-                    Connect with us for project updates & visit details
-                  </p>
-                </div>
-
-                <div className="flex items-center gap-2.5">
-                  <a
-                    href={DREAM_PROJECT_INFO.mapsUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 px-4 h-11 rounded-[12px] bg-white/15 hover:bg-white/25 text-white border border-white/20 text-xs font-semibold transition-colors"
-                  >
-                    <MapPinIcon size={15} className="text-[#C8A982]" />
-                    <span>Location</span>
+                    <MapPinIcon size={15} />
+                    <span>Map</span>
                   </a>
                   <a
                     href={whatsappEnquiryUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label="Enquire about Swargam Medu Villas on WhatsApp"
+                    aria-label="Enquire about Swargam Medu Dream Project on WhatsApp"
                     title="WhatsApp Enquiry"
-                    className="inline-flex items-center justify-center h-11 w-11 rounded-[12px] bg-[#F5F2E9] hover:bg-white text-[#344B39] transition-colors shadow-sm"
+                    className="inline-flex items-center justify-center h-11 w-11 rounded-[12px] bg-[#344B39] hover:bg-[#282B26] text-white transition-all shadow-xs"
                   >
-                    <WhatsAppIcon size={20} />
+                    <WhatsAppIcon size={19} />
                   </a>
                   <a
                     href={`tel:${SITE_INFO.contact.phoneRaw}`}
-                    aria-label="Call about Swargam Medu Villas"
-                    title="Call Us"
-                    className="inline-flex items-center justify-center h-11 w-11 rounded-[12px] bg-white/15 hover:bg-white/25 text-white border border-white/20 transition-colors shadow-sm"
+                    aria-label="Call about Swargam Medu Dream Project"
+                    title="Call Direct"
+                    className="inline-flex items-center justify-center h-11 w-11 rounded-[12px] bg-[#F5F2E9] hover:bg-[#D9E1D3]/70 text-[#344B39] border border-[#344B39]/20 transition-all shadow-xs"
                   >
-                    <PhoneIcon size={19} />
+                    <PhoneIcon size={18} />
                   </a>
                 </div>
               </div>
-            </Reveal>
+            </div>
           </div>
+        </Reveal>
+
+        {/* Bottom 3-Card Bento Grid — Clean Normal-Flow Text Below Images (No Overlapping Overlays) */}
+        <div className="mt-6 sm:mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Card 1: 3-Acre Sandalwood Plantation */}
+          <Reveal delay={120}>
+            <article className="luxury-card group h-full rounded-[20px] bg-white border border-[#344B39]/12 overflow-hidden shadow-[0_10px_28px_rgba(40,43,38,0.05)] flex flex-col">
+              <div className="relative aspect-[16/10] w-full shrink-0 overflow-hidden bg-[#D9E1D3]">
+                <Image
+                  src={RESORT_IMAGES.swargamSandalwood.src}
+                  alt={RESORT_IMAGES.swargamSandalwood.alt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
+              <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between gap-3">
+                <div className="space-y-2.5">
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F5F2E9] text-[#344B39] text-xs font-bold border border-[#344B39]/10">
+                    <LeafIcon size={13} className="text-[#596B4D] shrink-0" />
+                    <span>3-Acre Sandalwood Estate</span>
+                  </div>
+                  <h4 className="text-lg font-bold text-[#344B39] leading-snug break-words">
+                    Harmonized Around Newly Planted Sandalwood
+                  </h4>
+                  <p className="text-xs sm:text-sm text-[#282B26]/80 leading-relaxed">
+                    Our villas are nestled inside 3 acres of newly planted
+                    sandalwood groves at Mangathotty, Audathi—creating a calm,
+                    aromatic high-range environment that matures into a private
+                    botanical sanctuary.
+                  </p>
+                </div>
+              </div>
+            </article>
+          </Reveal>
+
+          {/* Card 2: Swargam Medu Viewpoint Proximity */}
+          <Reveal delay={200}>
+            <article className="luxury-card group h-full rounded-[20px] bg-white border border-[#344B39]/12 overflow-hidden shadow-[0_10px_28px_rgba(40,43,38,0.05)] flex flex-col">
+              <div className="relative aspect-[16/10] w-full shrink-0 overflow-hidden bg-[#D9E1D3]">
+                <Image
+                  src={RESORT_IMAGES.swargamHills.src}
+                  alt={RESORT_IMAGES.swargamHills.alt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
+              <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between gap-3">
+                <div className="space-y-2.5">
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F5F2E9] text-[#344B39] text-xs font-bold border border-[#344B39]/10">
+                    <MountainIcon
+                      size={13}
+                      className="text-[#596B4D] shrink-0"
+                    />
+                    <span>Swargam Medu Viewpoint</span>
+                  </div>
+                  <h4 className="text-lg font-bold text-[#344B39] leading-snug break-words">
+                    Steps from the Iconic &ldquo;Hill of Heaven&rdquo;
+                  </h4>
+                  <p className="text-xs sm:text-sm text-[#282B26]/80 leading-relaxed">
+                    Located right next to the famous Swargam Medu Viewpoint in
+                    Senapathy Panchayat, giving guests direct access to
+                    swirling valley clouds, green meadows, and panoramic
+                    Western Ghats vistas.
+                  </p>
+                </div>
+              </div>
+            </article>
+          </Reveal>
+
+          {/* Card 3: Key Attractions Checklist Card */}
+          <Reveal delay={280} className="md:col-span-2 lg:col-span-1">
+            <div className="luxury-card h-full rounded-[20px] bg-white border border-[#344B39]/14 p-5 sm:p-6 shadow-[0_10px_28px_rgba(40,43,38,0.05)] flex flex-col justify-between gap-5">
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className="h-11 w-11 rounded-[12px] bg-[#D9E1D3]/75 text-[#344B39] flex items-center justify-center shrink-0">
+                    <HomeWoodIcon size={22} />
+                  </div>
+                  <div className="min-w-0">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#596B4D] block">
+                      Signature Highlights
+                    </span>
+                    <h4 className="text-lg font-bold text-[#344B39] leading-snug break-words">
+                      Why Swargam Medu Villas?
+                    </h4>
+                  </div>
+                </div>
+
+                <ul className="space-y-3 pt-1">
+                  {[
+                    "Directly adjacent to Swargam Medu Viewpoint",
+                    "Set within 3 acres of newly planted sandalwood",
+                    "Located at Mangathotty, Audathi (Ottathi), Senapathy",
+                    "Elevated eco-pod villa decks with 360° mountain skies",
+                  ].map((point) => (
+                    <li
+                      key={point}
+                      className="flex items-start gap-2.5 text-xs sm:text-sm font-medium text-[#282B26]/90"
+                    >
+                      <CheckCircleIcon
+                        size={17}
+                        className="text-[#344B39] shrink-0 mt-0.5"
+                      />
+                      <span className="leading-snug break-words">{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <a
+                href={DREAM_PROJECT_INFO.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-3 px-4 rounded-[12px] bg-[#F5F2E9] hover:bg-[#344B39] text-[#344B39] hover:text-white text-xs font-bold tracking-wide transition-all duration-300 flex items-center justify-between gap-2 border border-[#344B39]/12"
+              >
+                <span className="truncate">
+                  View Swargam Medu on Google Maps
+                </span>
+                <ArrowUpRightIcon size={15} className="shrink-0" />
+              </a>
+            </div>
+          </Reveal>
         </div>
       </div>
     </section>

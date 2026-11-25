@@ -40,6 +40,14 @@ export const RESORT_IMAGES: Record<string, ImageAsset> = {
     caption:
       "Munnar Villas Suryanelli Wood Resort surrounded by emerald tea slopes and mountain forest.",
   },
+  heroHillsideResortMobile: {
+    id: "hero-hillside-resort-mobile",
+    src: "/images/hero-slide-1-mobile.webp",
+    alt: "Vertical portrait view of Munnar Villas Suryanelli Wood Resort nestled between mountain forest and terraced green tea plantations",
+    title: "Hillside Resort Amid Lush Greenery (Mobile)",
+    category: "Resort Views",
+    aspect: "tall",
+  },
   heroDesktop: {
     id: "hero-desktop",
     src: "/images/hero-mobile.webp",
@@ -49,6 +57,14 @@ export const RESORT_IMAGES: Record<string, ImageAsset> = {
     aspect: "wide",
     caption:
       "Misty dawn views over the Suryanelli–Kolukkumalai high range in Munnar.",
+  },
+  heroDawnMobile: {
+    id: "hero-dawn-mobile",
+    src: "/images/hero-slide-2-mobile.webp",
+    alt: "Vertical portrait view of golden sunrise over the misty mountain peaks of Suryanelli and Kolukkumalai in Munnar",
+    title: "Suryanelli & Kolukkumalai Dawn Horizon (Mobile)",
+    category: "Nature & Mountains",
+    aspect: "tall",
   },
   heroMobile: {
     id: "hero-mobile",

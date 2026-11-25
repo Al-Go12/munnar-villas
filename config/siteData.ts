@@ -43,10 +43,10 @@ export const NAV_LINKS = [
   { label: "Home", href: "#home" },
   { label: "About Us", href: "#about" },
   { label: "Stay", href: "#stay" },
-  { label: "Dream Project", href: "#dream-project" },
   { label: "Experiences", href: "#experiences" },
   { label: "Sightseeing", href: "#sightseeing" },
   { label: "Gallery", href: "#gallery" },
+  { label: "Dream Project", href: "#dream-project" },
   { label: "Contact", href: "#contact" },
 ];
 

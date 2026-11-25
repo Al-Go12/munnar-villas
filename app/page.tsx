@@ -28,9 +28,6 @@ export default function HomePage() {
         {/* Section 3: Stay With Us – Accommodation */}
         <AccommodationSection />
 
-        {/* Our Dream Project: Swargam Medu Sandalwood Villas */}
-        <DreamProjectSection />
-
         {/* Section 4: Why Choose Munnar Villas? */}
         <WhyChooseSection />
 
@@ -45,6 +42,9 @@ export default function HomePage() {
 
         {/* Section 8: Guest Testimonials */}
         <TestimonialsSection />
+
+        {/* Our Dream Project: Swargam Medu Sandalwood Villas */}
+        <DreamProjectSection />
 
         {/* Section 9: Location and Surroundings */}
         <LocationSection />

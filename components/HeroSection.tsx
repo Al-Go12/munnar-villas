@@ -8,8 +8,9 @@ import { ArrowRightIcon } from "./Icons";
 const HERO_SLIDES = [
   {
     id: "slide-hillside-resort",
-    image: RESORT_IMAGES.heroHillsideResort,
-    eyebrow: "MUNNAR VILLAS • SURYANELLI WOOD RESORT",
+    desktopImage: RESORT_IMAGES.heroHillsideResort,
+    mobileImage: RESORT_IMAGES.heroHillsideResortMobile,
+    eyebrow: "GATEWAY TO KOLUKKUMALAI & HIGH RANGES",
     headlineLine1: "Escape to the Hills.",
     headlineLine2: "Stay Close to Nature.",
     description:
@@ -17,7 +18,8 @@ const HERO_SLIDES = [
   },
   {
     id: "slide-dawn-horizon",
-    image: RESORT_IMAGES.heroDesktop,
+    desktopImage: RESORT_IMAGES.heroDesktop,
+    mobileImage: RESORT_IMAGES.heroDawnMobile,
     eyebrow: "GATEWAY TO KOLUKKUMALAI & HIGH RANGES",
     headlineLine1: "Wake Up Above",
     headlineLine2: "The Misty Clouds.",
@@ -41,9 +43,9 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-[88vh] sm:min-h-[92vh] w-full flex items-center justify-center overflow-hidden bg-[#1a221c]"
+      className="relative min-h-screen h-dvh w-full flex flex-col justify-between overflow-hidden bg-[#1a221c]"
     >
-      {/* Carousel Background Slides — Crystal-Clear Full Resolution without Muddy Full-Screen Haze */}
+      {/* Carousel Background Slides — Dedicated 9:16 Portrait Images for Mobile & Wide Landscape Images for Desktop */}
       {HERO_SLIDES.map((slide, index) => {
         const isActive = index === currentSlide;
         return (
@@ -54,35 +56,51 @@ export default function HeroSection() {
             }`}
             aria-hidden={!isActive}
           >
+            {/* Desktop & Tablet Wide Landscape Image */}
             <Image
-              src={slide.image.src}
-              alt={slide.image.alt}
+              src={slide.desktopImage.src}
+              alt={slide.desktopImage.alt}
               fill
               priority={index === 0}
               unoptimized
               sizes="100vw"
-              className="object-cover object-center"
+              className="hidden sm:block object-cover object-center"
             />
-            {/* Clean, targeted vignette only behind the text and navbar so the resort & greenery stay vivid and razor-sharp */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/45" />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/15 to-transparent" />
+
+            {/* Mobile Dedicated 9:16 Vertical Portrait Image — Shows Full Width of Resort */}
+            <Image
+              src={slide.mobileImage.src}
+              alt={slide.mobileImage.alt}
+              fill
+              priority={index === 0}
+              unoptimized
+              sizes="100vw"
+              className="block sm:hidden object-cover object-center"
+            />
+
+            {/* Clean targeted gradient so center resort buildings remain completely clear while top navbar and text stay legible */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-transparent to-black/65 sm:to-black/45" />
+            <div className="hidden sm:block absolute inset-0 bg-gradient-to-r from-black/50 via-black/15 to-transparent" />
           </div>
         );
       })}
 
-      {/* Main Hero Content Container — Responsively Aligned Across Mobile, Tablet & Desktop */}
-      <div className="relative z-10 mx-auto max-w-7xl w-full px-4 sm:px-6 lg:px-8 pt-28 pb-20 sm:pt-36 sm:pb-24 flex flex-col justify-center">
-        <div className="max-w-2xl mx-auto lg:mx-0 text-center lg:text-left flex flex-col items-center lg:items-start space-y-5 sm:space-y-6">
-          {/* Crisp Luxury Eyebrow */}
-          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-black/35 backdrop-blur-xs border border-white/25 text-white text-[11px] sm:text-xs font-semibold uppercase tracking-[0.22em] shadow-sm">
+      {/* Main Hero Content Container — Balanced Top Eyebrow Badge + Lower Headline & CTA */}
+      <div className="relative z-10 mx-auto max-w-7xl w-full flex-1 px-4 sm:px-6 lg:px-8 pt-24 pb-20 sm:pt-28 sm:pb-24 flex flex-col justify-between">
+        {/* Upper Hero Zone: Eyebrow Pill Placed After Comfortable Space Below Navbar */}
+        <div className=" pt-3 sm:pt-6 flex justify-center lg:justify-start">
+          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 sm:px-4.5 sm:py-2 rounded-full bg-black/35 backdrop-blur-xs border border-white/25 text-white text-[10px] sm:text-xs font-semibold uppercase tracking-[0.2em] shadow-md">
             <span className="h-1.5 w-1.5 rounded-full bg-[#C8A982]" />
             <span>{activeContent.eyebrow}</span>
           </div>
+        </div>
 
-          {/* Large Responsive Headline with Optical Drop Shadow for Crystal-Clear Legibility */}
+        {/* Lower Hero Zone: Headline, Description & Compact CTA Remain at Bottom on Mobile */}
+        <div className="max-w-2xl mx-auto lg:mx-0 text-center lg:text-left flex flex-col items-center lg:items-start space-y-4 sm:space-y-6 sm:my-auto">
+          {/* Large Responsive Headline with Optical Drop Shadow */}
           <h1
             key={activeContent.id}
-            className="text-3xl sm:text-5xl md:text-6xl lg:text-[4.15rem] font-extrabold text-white leading-[1.1] tracking-tight drop-shadow-[0_4px_24px_rgba(0,0,0,0.65)] animate-fade-up"
+            className="text-3xl sm:text-5xl md:text-6xl lg:text-[4.15rem] font-extrabold text-white leading-[1.1] tracking-tight drop-shadow-[0_4px_24px_rgba(0,0,0,0.75)] animate-fade-up"
           >
             <span className="block">{activeContent.headlineLine1}</span>
             <span className="text-[#F5F2E9] block mt-1">
@@ -91,15 +109,15 @@ export default function HeroSection() {
           </h1>
 
           {/* Supporting Description */}
-          <p className="text-sm sm:text-lg md:text-xl text-white font-medium max-w-xl leading-relaxed drop-shadow-[0_2px_14px_rgba(0,0,0,0.75)]">
+          <p className="text-xs sm:text-lg md:text-xl text-white font-medium max-w-xl leading-relaxed drop-shadow-[0_2px_14px_rgba(0,0,0,0.85)]">
             {activeContent.description}
           </p>
 
-          {/* Compact Single CTA Button — Properly Sized on Mobile & Desktop */}
-          <div className="pt-2 flex items-center justify-center lg:justify-start">
+          {/* Compact Single CTA Button */}
+          <div className="pt-1 sm:pt-2 flex items-center justify-center lg:justify-start">
             <a
               href="#stay"
-              className="group inline-flex w-auto items-center justify-center gap-2.5 px-7 py-3.5 sm:px-8 sm:py-4 rounded-[14px] bg-[#344B39] hover:bg-[#282B26] text-white font-semibold text-sm sm:text-base transition-all duration-300 shadow-[0_12px_32px_rgba(0,0,0,0.38)] border border-white/25 hover:-translate-y-0.5"
+              className="group inline-flex w-auto items-center justify-center gap-2.5 px-6 py-3.5 sm:px-8 sm:py-4 rounded-[14px] bg-[#344B39] hover:bg-[#282B26] text-white font-semibold text-sm sm:text-base transition-all duration-300 shadow-[0_12px_32px_rgba(0,0,0,0.42)] border border-white/25 hover:-translate-y-0.5"
             >
               <span>Explore Our Stay</span>
               <ArrowRightIcon
